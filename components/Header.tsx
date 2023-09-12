@@ -6,7 +6,7 @@ import { SocialIcon } from 'react-social-icons';
 import { motion, easeOut, easeIn, AnimatePresence  } from 'framer-motion';
 import UseThemeProvider from './libs/UseThemeProvider';
 import Logo from './Logo';
-import {FiExternalLink} from 'react-icons/fi';
+//import {FiExternalLink} from 'react-icons/fi';
 import {MoonIcon, SunIcon} from './libs/themeIcon'
 
 interface IconBaseProps{
@@ -103,7 +103,7 @@ const handleClick = () =>{
     <CustomLink href='/' title="Home" className='mr-4 text-gray-300 cursor-poitner hover:text-black dark:hover:text-gray-500'/>
     <CustomLink href='/project' title="Projects" className='mr-4 text-gray-300 cursor-poitner hover:text-black dark:hover:text-gray-500'/>
     <CustomLink href='about' title="About" className='mr-4 text-gray-300 cursor-poitner hover:text-black dark:hover:text-gray-500'/>
-    <Link href="/CV_otto_english.pdf" className='flex mr-4 text-gray-300 cursor-pointer border-transparent hover:text-black dark:hover:text-gray-500' target={"_blank"} download={true}>Resume<div className={"w-4 mt-1 ml-2"}><FiExternalLink/></div>
+    <Link href="/CV_otto_english.pdf" className='flex mr-4 text-gray-300 cursor-pointer border-transparent hover:text-black dark:hover:text-gray-500' target={"_blank"} download={true}>Resume<div className={"w-4 ml-2"}>&#128279;</div>
     </Link>
     </nav>
     
@@ -157,7 +157,7 @@ const handleClick = () =>{
     <CustomMobileLink href='/' title="Home" className='mt-4 text-white dark:text-white' toggle={handleClick}/>
     <CustomMobileLink href='/project' title="Projects" className='mt-4 text-white dark:text-white' toggle={handleClick}/>
     <CustomMobileLink href='about' title="About" className='mt-4 text-white dark:text-white' toggle={handleClick}/>
-    <Link href="/CV_otto_english.pdf" className='flex mt-4 text-white dark:text-white' target={"_blank"} download={true}>Resume<div className={"w-4 mt-1 ml-2"}><FiExternalLink/></div>
+    <Link href="/CV_otto_english.pdf" className='flex mt-4 text-white dark:text-white' target={"_blank"} download={true}>Resume<div className={"w-4 mt-1 ml-2"}>&#128279;</div>
     </Link>
     </nav>
     
