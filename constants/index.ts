@@ -16,19 +16,19 @@ import docker from '../public/texture/docker.png'
 import  wordpress  from '../public/texture/wordpress.png';
   const technologies = [
     {
-      name: "HTML",
+      name: "html",
       icon: html,
     },
     {
-      name: "CSS",
+      name: "css",
       icon: css,
     },
     {
-      name: "JavaScript",
+      name: "javascript",
       icon: javascript,
     },
     {
-      name: "TypeScript",
+      name: "typescript",
       icon: typescript,
     },
     {
@@ -36,11 +36,11 @@ import  wordpress  from '../public/texture/wordpress.png';
       icon: reactjs,
     },
     {
-        name: "Angular",
+        name: "angular",
         icon: angular,
       },
       {
-        name: "Wordpress",
+        name: "wordpress",
         icon: wordpress,
       },
       {
@@ -64,7 +64,7 @@ import  wordpress  from '../public/texture/wordpress.png';
       icon: nodejs,
     },
     {
-      name: "Mongodb",
+      name: "mongodb",
       icon: mongodb,
     },
     {
