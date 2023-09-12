@@ -42,12 +42,12 @@ export const MoonIcon = ({className, ...props}: IconProps) => (
                                             <animate fill="freeze" attributeName="r" begin="0.6s" dur="0.4s" values="10;1"></animate>
                                         </circle>
                                     </mask>
-                                    <circle cx="12" cy="12" r="10" fill="currentColor" mask="url(#lineMdMoonFilledToSunnyFilledLoopTransition0)" opacity="0">
-                                        <set fill='freeze' attributeName="opacity" begin="0.6s" to="1"></set>
+                                    <circle cx="12" cy="12" r="10" fill="currentColor" mask="url(#lineMdMoonFilledToSunnyFilledLoopTransition0)" opacity="1">
+                                        <animate fill='freeze' attributeName="opacity" begin="0.6s" to="1"></animate> 
                                         <animate fill="freeze" attributeName="r" begin="0.6s" dur="0.4s" values="10;6"></animate>
                                     </circle>
-                                </svg> 
-)
+                                 </svg> 
+) as any
 
 
 export const SunIcon = ({className, ...props}: IconProps) => (
