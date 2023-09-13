@@ -45,7 +45,7 @@ const about = () => {
                         <br />
                     <p className='pb-10 dark:text-white'>Upon returning home to Stockholm, I worked part-time as a freelancer for Amnis Systemutveckling from January to September 2020. During this period, I assisted them with designing and developing icons, graphical web elements, and user interface (UX) elements.
                     </p>
-                    <p className='pb-10 dark:text-white'>Subsequently, I pursued studies at Medieinstitutet from September 2021 to May 2023, focusing on web development, including e-commerce. Concurrently, I worked part-time as a freelancer for RDA - Research Data Alliance from September 2021 to September 2023, assisting them with designing and developing icons.
+                    <p className='pb-10 dark:text-white'>Subsequently, I pursued studies at Medieinstitutet from September 2021 to May 2023, focusing on web development, including e-commerce. I worked part-time as a freelancer for RDA - Research Data Alliance from September 2021 to September 2023, assisting them with designing and developing icons.
                     </p>
                     <p className='pb-10 dark:text-white'>Regarding my disability (Deaf), I have thrived in diverse workplace environments. My colleagues are aware of my disability, and I proficiently communicate in both English and Swedish to foster cooperation. While I rarely use sign language, I embrace the advancements in accessible technologies for the hard of hearing and deaf communities. Platforms like Slack and Teams facilitate seamless group communication through transcriptions.
                     </p>
