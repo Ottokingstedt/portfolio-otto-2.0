@@ -13,7 +13,7 @@ import mongodb from '../public/texture/mongodb.png';
 import threejs from '../public/texture/three.png';
 import git from '../public/texture/git.png';
 import docker from '../public/texture/docker.png'
-import wordpress from '../public/texture/wordpress.png'
+import wordpress from '../public/texture/wordpressImage.png'
   const technologies = [
     {
       name: "html",
@@ -41,7 +41,7 @@ import wordpress from '../public/texture/wordpress.png'
       },
       {
         name: "wordpress",
-       // icon: wordpress,
+       icon: wordpress,
       },
       {
         name: "php",
