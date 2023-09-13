@@ -16,7 +16,7 @@ const Details = ({position, company, companyLink, time, address, work}: DetailsP
     return <li className='my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-center justify-between'>
         <Lilcon reference={ref} />
         <div>
-            <h3 className=' capitalize font-bold md:text-2xl dark:text-white text-[12px]'>{position}&nbsp;<a href={companyLink}
+            <h3 className=' capitalize font-bold md:text-2xl dark:text-white text-lg'>{position}&nbsp;<a href={companyLink}
             target="_blank"
             className=' text-orange-600 capitalize'>
                 

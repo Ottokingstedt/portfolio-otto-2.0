@@ -14,7 +14,7 @@ const Details = ({type, place, info, time}: DetailsProps) => {
     return <li className='my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col justify-between'>
         <Lilcon reference={ref} />
         <div>
-            <h3 className=' capitalize font-bold md:text-2xl text-lg dark:text-white'>{type}</h3>
+            <h3 className='capitalize font-bold md:text-2xl text-lg dark:text-white'>{type}</h3>
             <span className=' capitalize font-medium text-gray-500 dark:text-gray-400'>
                 {time} | {place}
             </span>
