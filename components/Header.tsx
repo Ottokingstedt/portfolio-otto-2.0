@@ -74,7 +74,7 @@ const handleClick = () =>{
 
  
   return (
-    <header className='px-8 py-8 flex w-full items-center justify-between z-20 lg:py-4 ' onClick={handleClick}>
+    <header className='px-8 py-8 flex w-full items-center justify-between z-20 lg:py-4 overflow-hidden' onClick={handleClick}>
 
       <button  className='fixed z-40 flex-col jusify-center items-center lg:hidden'>
         <span className={`bg-black dark:bg-white block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${isOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`}></span>

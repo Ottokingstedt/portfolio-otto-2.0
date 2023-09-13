@@ -16,7 +16,7 @@ import SpaceModel from '@/components/SpaceModel'
 <LayoutBlock className='pt-0 md:pt-16 sm:pt-8 lg:mt-0 mt-32'>
     <div className='relative flex flex-col justify-center items-center w-full lg:w-full lg:text-center'>
     <NoSsr>
-    <SpaceModel className='w-[600px] h-[600px] md:h-[150vh] flex items-center justify-center absolute top-[-30vh] md:top-[-45vh] md:left-0' />
+    <SpaceModel className='w-[600px] h-[600px] md:h-[150vh] flex items-center justify-center absolute top-[-50vh] md:top-[-45vh] md:left-0' />
     </NoSsr>
     </div>
     <div className='md:w-full flex lg:flex-col items-end justify-end lg:!text-left'>
@@ -29,9 +29,6 @@ import SpaceModel from '@/components/SpaceModel'
       </p>
     </div>
   </div>
-
-
-
       <HireMe />
 </LayoutBlock>
 </>

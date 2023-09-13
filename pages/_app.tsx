@@ -16,12 +16,12 @@ export default function App({ Component, pageProps }: AppProps) {
     const router = useRouter();
   return (
   // <ThemeProvider defaultTheme='light' attribute='class'>
-    <main className={`${roboto.variable} font-sans dark:bg-zinc-900 h-[100%] overflow-hidden`}>
+    <main className={`${roboto.variable} font-sans dark:bg-zinc-900 !h-full !overflow-hidden`}>
     <Header/>
     <AnimatePresence mode='wait'>
   <Component key={router.asPath} {...pageProps} />
   </AnimatePresence>
-  <Footer />
+  <Footer/>
     </main>
   //</ThemeProvider>
   );
