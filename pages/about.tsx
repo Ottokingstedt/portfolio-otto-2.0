@@ -34,7 +34,6 @@ const about = () => {
     <motion.div style={{scaleX: scrollYProgress}}
             className='fixed left-0 top-0  w-full h-[4px] bg-orange-500 origin-left z-10'/>
         <LayoutBlock className='pt-16 px-4'>
-            <AnimatedText text="" className='mb-16 '/>
             <div className='grid w-full grid-cols-8 lg:gap-16 gap-8 px-4'>
                 <div className='xl:col-span-4 lg:col-span-3 col-span-8 flex flex-col md:items-start md:justify-start justify-center items-center order-2 lg:order-1'>
                     <h2 className='mb-4 lg:text-[4rem] font-bold uppercase dark:text-white'>Biography</h2>
