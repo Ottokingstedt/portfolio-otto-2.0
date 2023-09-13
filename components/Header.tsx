@@ -20,21 +20,18 @@ interface CustomLinkProps {
   toggle?: () => void;
 };
 
-interface closeHandleClickProps {
-  onClose?: () => void;
-}
+
 
 
 const CustomLink: React.FC<CustomLinkProps> = ({href, title, className}) => {
   const router = useRouter();
   return(
-    <Link href={href} className={`${className}`}>
+    <Link href={href} className={`relative ${className}`}>
       {title}
-      <span className={`h-[1px] inline-block w-0 bg-dark 
-      absolute left-0 -bottom-0.5 
+      <span className={`w-0 bg-dark !hidden
+      absolute left-0 -bottom-0.5 m-0
       group-hover:w-full transition-[width] ease duration-300
       ${router.asPath === href ? 'w-full' : 'w-0'}`}>
-        &nbsp;
       </span>
     </Link>
   )
@@ -54,10 +51,9 @@ const CustomMobileLink: React.FC<CustomLinkProps> = ({ href, title, className, t
     <button className={`${className} relative group text-white dark:text-black`} onClick={handleClick}>
       {title}
       <span className={`h-[1px] inline-block w-0 bg-dark 
-      absolute left-0 -bottom-0.5 
+      absolute left-0 -bottom-0.5 overflow-hidden m-0
       group-hover:w-full transition-[width] ease duration-300
       ${router.asPath === href ? 'w-full' : 'w-0'}`}>
-        &nbsp;
       </span>
     </button>
   )

@@ -41,7 +41,7 @@ export default function LayoutBlock({ children, className, ...customMeta  }: Lay
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
       </Head>
-      <main className={`w-full h-full z-0 dark:bg-zinc-900 ${className}`}>
+      <main className={`w-full z-0 dark:bg-zinc-900 p-0 ${className}`}>
           {children}
       </main>
     </div>
