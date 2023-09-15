@@ -124,7 +124,7 @@ const handleClick = () =>{
    <button 
             onClick={() => { if(typeof setMode === "function") { setMode(mode === "light" ? "dark" : "light")}
           }}
-            className={`ml-3 items-center justify-center rounded-full p-[4px] first-letter
+            className={`w-8 ml-3 items-center justify-center rounded-full p-[4px] first-letter
             ${mode === "light" ? "bg-black text-white" : "bg-white text-black"}`}
             >
             {
