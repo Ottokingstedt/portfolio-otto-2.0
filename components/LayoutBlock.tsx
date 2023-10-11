@@ -36,6 +36,7 @@ export default function LayoutBlock({ children, className, ...customMeta  }: Lay
         <meta property="og:description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
         <meta property="og:image" content={meta.image} />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
