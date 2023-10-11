@@ -5,7 +5,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head />
-      <body className=''>
+      <body className='dark:bg-zinc-900'>
         <Script id="theme-switcher" strategy='beforeInteractive'>
           {
             `

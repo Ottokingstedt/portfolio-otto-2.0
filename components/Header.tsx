@@ -96,10 +96,10 @@ const handleClick = () =>{
     className='items-center justify-between w-full hidden lg:flex'
     > 
     <nav className='flex items-center justify-center z-10'>
-    <CustomLink href='/' title="Home" className='mr-4  cursor-poitner hover:text-black dark:hover:text-gray-500'/>
-    <CustomLink href='/project' title="Projects" className='mr-4  cursor-poitner hover:text-black dark:hover:text-gray-500'/>
-    <CustomLink href='about' title="About" className='mr-4  cursor-poitner hover:text-black dark:hover:text-gray-500'/>
-    <Link href="/CV_otto_english.pdf" className='flex mr-4  cursor-pointer border-transparent hover:text-black dark:hover:text-gray-500' target={"_blank"} download={true}>Resume<div className={"w-4 ml-2"}>&#128279;</div>
+    <CustomLink href='/' title="Home" className='mr-4  cursor-poitner dark:text-gray-100 hover:text-black dark:hover:text-gray-500'/>
+    <CustomLink href='/project' title="Projects" className='mr-4  cursor-poitner dark:text-gray-100 hover:text-black dark:hover:text-gray-500'/>
+    <CustomLink href='about' title="About" className='mr-4  cursor-poitner dark:text-gray-100 hover:text-black dark:hover:text-gray-500'/>
+    <Link href="/CV_otto_english.pdf" className='flex mr-4  cursor-pointer border-transparent dark:text-gray-100 hover:text-black dark:hover:text-gray-500' target={"_blank"} download={true}>Resume<div className={"w-4 ml-2"}>&#128279;</div>
     </Link>
     </nav>
     
@@ -108,18 +108,18 @@ const handleClick = () =>{
       network='email'
       fgColor='currentColor'
       bgColor='transparent'
-      className=' hover:text-[#000000] cursor-pointer dark:hover:text-gray-200'
+      className='dark:text-gray-100 hover:text-[#000000] cursor-pointer dark:hover:text-gray-200'
       url='mailto:otto.kingstedt@gmail.com'
       />
         <SocialIcon url="https://www.linkedin.com/in/otto-kingstedt"
       fgColor='currentColor'
       bgColor='transparent'
-      className=' hover:text-[#000000] dark:hover:text-gray-200'
+      className='dark:text-gray-100 hover:text-[#000000] dark:hover:text-gray-200'
       />
       <SocialIcon url="https://github.com/ottokingstedt"
             fgColor='currentColor'
             bgColor='transparent'
-            className=' hover:text-[#000000] dark:hover:text-gray-200'      
+            className='dark:text-gray-100 hover:text-[#000000] dark:hover:text-gray-200'      
       />
    <button 
             onClick={() => { if(typeof setMode === "function") { setMode(mode === "light" ? "dark" : "light")}
