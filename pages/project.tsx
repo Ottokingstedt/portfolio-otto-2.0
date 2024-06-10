@@ -107,8 +107,8 @@ const Projects = ({}) => {
     }, []);
   return (
     <div  className='w-[full] relative'>
-    <main className='w-full mb-16 flex flex-col  max-w-screen-xl m-auto items-center justify-center'>
-        <LayoutBlock className='pt-16 px-8 grid grid-cols-2 gap-10'>
+    <main className='w-full lg:mb-16 flex flex-col  max-w-screen-xl m-auto items-center justify-center'>
+        <LayoutBlock className='pt-16 px-8 lg:grid grid-cols-2 gap-10 md:block'>
             <div>
             <AnimatedText className='lg:text-4xl mb-5 text-left lg:leading-[54px]' text="Sök du designer, SEO och webbutvecklare? "/>
             <p className='text-gray-500'>
@@ -133,8 +133,8 @@ const Projects = ({}) => {
             </div>
            
             <div className='flex gap-x-0' >
-            <div className="absolute inset-0 z-auto after:absolute after:right-0 after:top-0 after:w-2/4 after:h-2/4 after:bg-gradient-to-l after:from-white  after:filter after:blur-3 after:overflow-hidden"/>
-                <div className=' -z-10'
+            <div className="hidden lg:block absolute inset-0 z-auto after:absolute after:right-0 after:top-0 after:w-2/4 after:h-2/4 after:bg-gradient-to-l after:from-white  after:filter after:blur-3 after:overflow-hidden"/>
+                <div className=' -z-10 mt-12 lg:mt-0'
 
                   >
                     <FeaturedProject
@@ -147,8 +147,8 @@ const Projects = ({}) => {
         </LayoutBlock>
 
     </main>
-    <div className=' pt-36 w-[full] mx-auto relative '>
-            <h2 className=' font-bold text-4xl text-center mb-10 pb-10'>
+    <div className=' lg:pt-36 w-[full] mx-auto relative '>
+            <h2 className=' font-bold text-2xl lg:text-4xl text-center mb-10 pb-10'>
             Hur kan en webbsida se ut?
             </h2>
     <div className='w-full h-[600px] overflow-hidden z-40 relative '>
@@ -162,9 +162,9 @@ const Projects = ({}) => {
         </h2>
         <p className='text-center text-gray-500'>
         Jag använder ett strukturerat arbetssätt för att säkerställa en professionell leverans av din nya webbplats. För dig med en begränsad budget är designmallar ett optimalt val, medan du som behöver avancerade funktioner och en mer skräddarsydd lösning kan dra nytta av strategisk webbdesign.        </p>
-        <section className=' grid grid-cols-3  gap-20 pt-20 z-30'>
+        <section className=' block lg:grid grid-cols-3  gap-20 pt-20 z-30'>
 
-<div ref={scrollRef} style={{ overflow: "scroll", height: "400px" }} >
+<div ref={scrollRef} style={{ overflow: "scroll", height: "auto" }} >
         <AnimatePresence>
         {isVisible && (
                 <motion.div className='block'
@@ -182,7 +182,7 @@ const Projects = ({}) => {
 
                 }}
                 >
-                <SlScreenDesktop className='h-10 w-10 mt-10'  />
+                <SlScreenDesktop className='h-10 w-10 mt-10 lg:mt-0'  />
                     <h3 className=' text-lg font-bold mt-2'>
                     Designmallar            
                     </h3>
@@ -263,7 +263,7 @@ const Projects = ({}) => {
     </div>
     </div>
     <section className=' mx-auto max-w-screen-xl z-100'>
-        <div className='grid grid-cols-rep gap-0 '>
+        <div className='block lg:grid grid-cols-rep gap-0 '>
         <div>
             <Image src={Profile} alt="Otto is coding" height={600} width={600} className='p-10' />
         </div>
