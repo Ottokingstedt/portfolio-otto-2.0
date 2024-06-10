@@ -150,7 +150,7 @@ const Projects = ({}) => {
         </LayoutBlock>
 
     </main>
-    <div className=' lg:pt-36 w-[full] mx-auto relative '>
+    <div className=' pt-36 lg:pb-36 pb-5 w-[full] mx-auto relative '>
             <h2 className=' font-bold text-2xl lg:text-4xl text-center mb-10 pb-10'>
             Hur kan en webbsida se ut?
             </h2>
