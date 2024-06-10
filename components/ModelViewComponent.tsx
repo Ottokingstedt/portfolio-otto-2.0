@@ -53,20 +53,6 @@ const ModelViewerComponent: React.FC = () => {
   
   return (
     <div>
-      <Script async src="https://ga.jspm.io/npm:es-module-shims@1.6.3/dist/es-module-shims.js" />
-      <Script
-                id="importmap-shim"
-                type="importmap-shim"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify({
-                        imports: {
-                            "three": "https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"
-                        }
-                    })
-                }}
-            />
-
-      <Script type="module-shim" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js" />
       <Script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js" />
       <model-viewer
         ref={modelViewerRef}
