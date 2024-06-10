@@ -12,7 +12,7 @@ import { SlScreenDesktop } from "react-icons/sl";
 import { FaMapSigns } from "react-icons/fa";
 import { BiSupport } from "react-icons/bi";
 import Profile from '../public/images/otto_skriver_kod.webp'
-
+import Link from 'next/link';
 
 interface freatureProjectProps {
     title: string, 
@@ -157,7 +157,7 @@ const Projects = ({}) => {
             </div>
     </div>
     <div className=' mx-auto max-w-screen-xl px-8 overflow-hidden pt-32 items-center pb-10 z-50'>
-        <h2 className='font-bold text-4xl text-center mb-10'>
+        <h2 className='font-bold text-4xl text-center mb-10' id="Såhär-hjälper-jag-dig">
         Såhär hjälper jag dig
         </h2>
         <p className='text-center text-gray-500'>
@@ -189,7 +189,9 @@ const Projects = ({}) => {
                     <p className='text-gray-500'>
                     Färdiga designmallar som du enkelt fyller på med eget innehåll. Praktiska och stilrena och lätta att anpassa efter dina behov.
                     </p>
+                    <Link href="/service/#Designmallar" passHref>
                     <button className='bg-black cursor-pointer hover:bg-gray-600 text-white font-bold py-2 px-4 rounded text-[16px] mt-8'>Läs mer om Designmallar</button>
+                    </Link>
                 </motion.div>
                  )}
         </AnimatePresence>
@@ -214,11 +216,13 @@ const Projects = ({}) => {
                 >
                 <FaMapSigns className='h-10 w-10 mt-10'  />
                     <h3 className=' text-lg font-bold mt-2'>
-                    Strategiskt            
+                    Strategisk webbdesign och UX/UI            
                     </h3>
                     <p className='text-gray-500'>
                     Du får en strategiskt planerad webbsida med en helt egen design och jag hjälper dig från idé till lansering.</p>
+                    <Link href="/service/#Strategisk-webbdesign-och-UX/UI" passHref>
                     <button className='bg-black hover:bg-gray-600 text-white font-bold py-2 px-4 rounded text-[16px] mt-8'>Läs mer om Strategiskt</button>
+                    </Link>
                 </motion.div>
         )}
         </AnimatePresence>
@@ -243,11 +247,13 @@ const Projects = ({}) => {
                 >
                 <BiSupport className='h-10 w-10 mt-10'  />
                     <h3 className=' text-lg font-bold mt-2'>
-                    Support            
+                    Support och Underhåll        
                     </h3>
                     <p className='text-gray-500'>
                     Fokusera på det du gör bäst och låt mig rå om din webbsida genom att regelbundet se över, uppdatera och administrera den.</p>
-                    <button className='bg-black hover:bg-gray-600 text-white font-bold py-2 px-4 rounded text-[16px] mt-8'>Läs mer om Support</button>
+                    <Link href="/service/#Support-och-underhåll" passHref>
+                    <button className='bg-black hover:bg-gray-600 text-white font-bold py-2 px-4 rounded text-[16px] mt-8'>Läs mer om Support och Underhåll</button>
+                    </Link>
                 </motion.div>
                      )}
         </AnimatePresence>

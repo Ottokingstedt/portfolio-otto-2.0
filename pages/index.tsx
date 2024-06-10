@@ -24,7 +24,8 @@ import ModelViewerComponent from '@/components/ModelViewComponent'
        <div className='mt-10'>
         <p className='font-normal text-xl leading-10 text-gray-500'>Jag hjälper dig som företagare med din nya hemsida på ett strategiskt sätt – från idé och planering till lansering av en professionell och användarvänlig webbplats som stöder dina övergripande affärsmål.
 </p>
-<button className='bg-black hover:bg-gray-600 text-white font-bold py-2 px-4 rounded text-[20px] mt-10'>Kom igång</button>
+<button className='bg-black hover:bg-gray-600 text-white font-bold py-2 px-4 rounded text-[20px] mt-10' id=''><a href="#Såhär-hjälper-jag-dig">Kom igång
+  </a></button>
        </div>
     </div>
   </div>
