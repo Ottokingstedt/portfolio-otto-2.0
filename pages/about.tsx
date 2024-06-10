@@ -26,8 +26,8 @@ const about = () => {
     <ScrollToTopButton/>
     <div ref={ref} className='flex flex-col w-full items-center justify-center overflow-hidden'>
         <LayoutBlock className='pt-32 px-10 pb-32'>
-            <div className='grid grid-cols-2 gap-6 max-w-screen-lg m-auto'>
-                <div className='flex flex-col md:items-start md:justify-start justify-center items-center order-1'>
+            <div className='md:block lg:grid grid-cols-2 gap-6 max-w-screen-lg m-auto'>
+                <div className=' flex flex-col md:items-start md:justify-start justify-center items-center order-1'>
                     <h2 className=' pb-10 md:text-6xl font-semibold text-2xl lg:leading-[75px] dark:text-white'>Vem är jag?</h2>
                     <p className=' leading-7'>Hej Jag är Otto, frilans webbutvecklare och grafiska designer. Jag blev döv efter att ha drabbats av hjärnhinneinflammation som barn, men sedan barndomen har jag framgångsrikt använt ett cochleaimplantat för talad kommunikation.
 
@@ -39,8 +39,8 @@ Jag är en elitlöpare och innehar världsrekordet för döva på 3000 meter och
 
 </p>
                 </div>
-                <div className=' mt-4'>
-                <Image src={OttoProfile} height={450} width={450} alt="Otto profile" />
+                <div className='lg:mt-4'>
+                <Image src={OttoProfile} height={450} width={450} alt="Otto profile" className=' md:mt-0 mt-10'/>
                 </div>
             </div>
             {/* <div className='flex flex-row flex-wrap justify-center gap-10 mt-20'>

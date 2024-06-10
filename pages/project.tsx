@@ -167,7 +167,7 @@ const Projects = ({}) => {
         Jag använder ett strukturerat arbetssätt för att säkerställa en professionell leverans av din nya webbplats. För dig med en begränsad budget är designmallar ett optimalt val, medan du som behöver avancerade funktioner och en mer skräddarsydd lösning kan dra nytta av strategisk webbdesign.        </p>
         <section className=' block lg:grid grid-cols-3  gap-20 pt-20 z-30'>
 
-<div ref={scrollRef} style={{ overflow: "scroll", height: "auto" }} >
+<div ref={scrollRef}>
         <AnimatePresence>
         {isVisible && (
                 <motion.div className='block'
@@ -185,7 +185,7 @@ const Projects = ({}) => {
 
                 }}
                 >
-                <SlScreenDesktop className='h-10 w-10 mt-10 lg:mt-0'  />
+                <SlScreenDesktop className='h-10 w-10 mt-10'  />
                     <h3 className=' text-lg font-bold mt-2'>
                     Designmallar            
                     </h3>

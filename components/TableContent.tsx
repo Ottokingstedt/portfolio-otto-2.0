@@ -3,7 +3,7 @@ import React from 'react'
 const TableContent = () => {
   return (
     <aside className=' max-w-[90%] p-0 ml-10'>
-    <div className='p-8 shadow-xl bg-white rounded sticky top-[10%] right-[0] left-[0] inline-block'>
+    <div className='md:block md:relative md:flex-nowrap p-8 shadow-xl bg-white rounded lg:sticky lg:top-[10%] lg:right-[0] lg:left-[0] lg:inline-block'>
         <div className=' font-semibold text-[20px] mb-4'>Innehållsförteckning</div>
         <ol className=' list-decimal pl-[15px]'>
             <li className='mb-2 hover:underline'>

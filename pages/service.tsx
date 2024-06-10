@@ -23,9 +23,10 @@ const service = () => {
     </Head>
     <ScrollToTopButton/>
     <motion.div style={{scaleX: scrollYProgress}} className="fixed left-0 top-0  w-full h-[4px] bg-[#005B88] origin-left z-50" />
-        <LayoutBlock className='pt-32 px-20 pb-0'>
-         <div className=' m-auto max-w-[1280px] flex justify-between px-10'>
-            <article className='w-full max-w-[780px]'>
+        <LayoutBlock className='pt-32 md:px-20 px-5 pb-0'>
+         <div className=' md:max-w-md m-auto lg:max-w-[1280px] md:block  lg:flex lg:flex-nowrap  justify-between px-10'>
+         <TableContent/>
+            <article className='lg:mt-0 mt-10 w-full max-w-[780px]'>
          <h2 className="text-2xl font-bold mb-4" id="Designmallar">Designmallar</h2>
 <p className='mb-4'>Färdiga designmallar som du enkelt kan fylla på med eget innehåll. 
     Dessa mallar är utformade för att vara både praktiska och estetiskt tilltalande. 
@@ -46,7 +47,6 @@ Du får en strategiskt planerad webbsida med en helt egen design och optimerad a
 <p className='mb-4'>Fokusera på det du gör bäst och låt mig ta hand om din webbsida genom att regelbundet se över, uppdatera och administrera den. Jag erbjuder en omfattande supporttjänst som inkluderar allt från säkerhetsuppdateringar och prestandaoptimering till innehållshantering och teknisk support. Jag kan hjälpa dig med SEO (sökmotoroptimering) för att förbättra din webbplats synlighet på Google, e-posthantering för att säkerställa att din kommunikation fungerar smidigt, och Google Analytics för att spåra och analysera din webbplats trafik och prestanda. Dessutom inkluderar supporttjänsten underhåll av marknadsföringskampanjer och grafiskt material för att säkerställa att ditt marknadsföringsinnehåll alltid är aktuellt och effektivt. Genom att låta mig sköta den tekniska delen av din webbnärvaro kan du fokusera på att driva och utveckla ditt företag.
 </p>
 </article>
-<TableContent/>
          </div>
         </LayoutBlock>
     </>  )
