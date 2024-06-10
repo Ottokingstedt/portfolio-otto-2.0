@@ -86,25 +86,28 @@ const Projects = ({}) => {
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
-        const handleScroll = () => {
-            if (scrollRef.current) {
-                const top = scrollRef.current.getBoundingClientRect().top;
-                const bottom = scrollRef.current.getBoundingClientRect().bottom;
-                const windowHeight = window.innerHeight;
-                if (top < windowHeight && bottom > 0) {
-                    setIsVisible(true);
-                } else {
-                    setIsVisible(false);
+        const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  setIsVisible(true);
+                  observer.disconnect(); // Disconnect after first visibility
                 }
+              });
+            },
+            {
+              threshold: 0.1, // Adjust threshold as needed
             }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
+          );
+      
+          if (scrollRef.current) {
+            observer.observe(scrollRef.current);
+          }
+      
+          return () => {
+            observer.disconnect();
+          };
+        }, []);
   return (
     <div  className='w-[full] relative'>
     <main className='w-full lg:mb-16 flex flex-col  max-w-screen-xl m-auto items-center justify-center'>
@@ -157,7 +160,7 @@ const Projects = ({}) => {
             </div>
     </div>
     <div className=' mx-auto max-w-screen-xl px-8 overflow-hidden pt-32 items-center pb-10 z-50'>
-        <h2 className='font-bold text-4xl text-center mb-10' id="Såhär-hjälper-jag-dig">
+        <h2 className='font-bold lg:text-4xl text-2xl text-center mb-10' id="Såhär-hjälper-jag-dig">
         Såhär hjälper jag dig
         </h2>
         <p className='text-center text-gray-500'>
