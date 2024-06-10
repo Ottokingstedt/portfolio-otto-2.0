@@ -48,7 +48,7 @@ const CustomMobileLink: React.FC<CustomLinkProps> = ({ href, title, className, t
 
 
   return (
-    <button className={`${className} relative group text-white dark:text-black`} onClick={handleClick}>
+    <button className={`${className} relative group`} onClick={handleClick}>
       {title}
       <span className={`h-[1px] inline-block w-0 bg-dark 
       absolute left-0 -bottom-0.5 overflow-hidden m-0
@@ -161,13 +161,14 @@ onClick={handleClick}>
     originX: 1,
     ease: [easeOut, easeIn]
   }}
-    className='min-w-[70vw] h-full flex flex-col items-center justify-center fixed z-30 top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 bg-zinc-500 dark:bg-zinc-950   lg:hidden'
+    className='min-w-[70vw] h-full flex flex-col items-center justify-center fixed z-30 top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-zinc-950   lg:hidden'
     > 
-    <nav className='flex items-center flex-col flex-warp mt-5'>
-    <CustomMobileLink href='/' title="Home" className='mt-4 text-white dark:text-white' toggle={handleClick}/>
-{/*     <CustomMobileLink href='/project' title="Projects" className='mt-4 text-white dark:text-white' toggle={handleClick}/>*/}    <CustomMobileLink href='about' title="About" className='mt-4 text-white dark:text-white' toggle={handleClick}/>
-    <Link href="/CV_otto_english.pdf" className='flex mt-4 text-white dark:text-white' target={"_blank"} download={true}>Resume<div className={"w-4 mt-1 ml-2"}>&#128279;</div>
-    </Link>
+    <nav className=' text-black flex items-center flex-col flex-warp'>
+    <CustomMobileLink href='/' title="Home" className='mt-4 text-black'  toggle={handleClick}/>
+    <CustomLink href='/about' title="Om mig" className='mt-4  cursor-poitner dark:text-gray-100 hover:underline dark:hover:text-gray-500' toggle={handleClick}/>
+ <CustomLink href='/offret' title="Offretförfrågan" className='mt-4  cursor-poitner dark:text-gray-100 hover:underline dark:hover:text-gray-500' toggle={handleClick}/>
+ <CustomLink href='/service' title="Tjänster" className='mt-4  cursor-poitner dark:text-gray-100 hover:underline dark:hover:text-gray-500' toggle={handleClick}/>
+
     </nav>
     
     <nav className="flex items-center mt-10">
@@ -187,18 +188,6 @@ onClick={handleClick}>
             bgColor='transparent'
             className='text-white'      
       />
-         <button 
-            onClick={() => { if(typeof setMode === "function") { setMode(mode === "light" ? "dark" : "light")}
-          }}
-            className={`w-[35px] ml-3 items-center justify-center rounded-full p-[4px] first-letter
-            ${mode === "light" ? "text-white" : "bg-white"}`}
-            >
-            {
-                mode === "dark" ?
-                <SunIcon className={"fill-black"}/> :
-                <MoonIcon className={""} />
-            }
-        </button>
 
         </nav>
 </motion.div>

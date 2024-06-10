@@ -133,7 +133,7 @@ const Projects = ({}) => {
             </div>
            
             <div className='flex gap-x-0' >
-            <div className="absolute inset-0 z-auto after:absolute after:right-0 after:top-0 after:w-2/4 after:h-2/4 after:bg-gradient-to-l after:from-white after:to-transparent after:filter after:blur-3 after:overflow-hidden"/>
+            <div className="absolute inset-0 z-auto after:absolute after:right-0 after:top-0 after:w-2/4 after:h-2/4 after:bg-gradient-to-l after:from-white  after:filter after:blur-3 after:overflow-hidden"/>
                 <div className=' -z-10'
 
                   >
