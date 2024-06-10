@@ -38,7 +38,7 @@ const AnimatedText: React.FC<AnimatedProps> = ({text, className=''}) => {
     <div className='w-full mx-auto oy-2 flex items-center justify-center text-center
     overflow-hidden sm:py-0'>
         <AnimatePresence>
-        <motion.p className={`text-sm inline-block w-full text-black font-bold capitalize dark:text-white md:text-base  ${className}`}
+        <motion.p className={`text-sm inline-block w-full text-black font-bold dark:text-white md:text-base  ${className}`}
         variants={quote}
         initial='intial'
         animate='animate'

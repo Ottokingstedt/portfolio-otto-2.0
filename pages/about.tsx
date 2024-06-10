@@ -1,17 +1,12 @@
 import {useRef} from 'react'
 import Head from 'next/head'
 import LayoutBlock from '@/components/LayoutBlock'
-import AnimatedText from '@/components/AnimatedText'
-import profileIMG from '../public/images/profile.jpg'
 import Image from 'next/image'
-import SphereCanvas from '@/components/models/Sphere'
-import Experince from '@/components/Experince'
+// import Experince from '@/components/Experince'
 import { useScroll, motion } from 'framer-motion';
-import Education from '@/components/Education'
-import TransitionEffect from '@/components/TransitionEffect'
+// import Education from '@/components/Education'
 import ScrollToTopButton from '@/components/ScrollToTopButton'
-import { technologies } from '@/constants'
-
+import OttoProfile from '../public/images/otto_profile.webp'
 const about = () => {
     const ref = useRef!(null);
     const {scrollYProgress} = useScroll!(
@@ -24,48 +19,37 @@ const about = () => {
     <>
     <Head>
         <title>
-            About Page
+            Om mig
         </title>
         <meta name='description' content='Biography about Otto Kingstedt'></meta>
     </Head>
-    <TransitionEffect />
     <ScrollToTopButton/>
     <div ref={ref} className='flex flex-col w-full items-center justify-center overflow-hidden'>
-    <motion.div style={{scaleX: scrollYProgress}}
-            className='fixed left-0 top-0  w-full h-[4px] bg-orange-500 origin-left z-10'/>
-        <LayoutBlock className='pt-16 px-4'>
-            <div className='grid w-full grid-cols-8 lg:gap-16 gap-8 px-4'>
-                <div className='xl:col-span-4 lg:col-span-3 col-span-8 flex flex-col md:items-start md:justify-start justify-center items-center order-2 lg:order-1'>
-                    <h2 className='mb-4 lg:text-[4rem] font-bold uppercase dark:text-white'>Biography</h2>
-                    <p className='dark:text-white'>
-                    Hello, I am Otto, a full-stack developer and designer. I became deaf after contracting meningitis as a child, but since childhood, I have successfully utilized a cochlear implant for spoken communication. I reside in Huddinge, near Stockholm.
-                        </p>
-                        <br />
-                    <p className='dark:text-white'>I spent 4.5 years in the USA, studying at Gallaudet University and the National Technical Institute for the Deaf at RIT University in Rochester, NY, from 2017 to 2019. During this time, I earned an Associate Degree in Design and Imaging Technology, focusing on Graphic Design.</p>
-                        <br />
-                    <p className='pb-10 dark:text-white'>Upon returning home to Stockholm, I worked part-time as a freelancer for Amnis Systemutveckling from January to September 2020. During this period, I assisted them with designing and developing icons, graphical web elements, and user interface (UX) elements.
-                    </p>
-                    <p className='pb-10 dark:text-white'>Subsequently, I pursued studies at Medieinstitutet from September 2021 to May 2023, focusing on web development, including e-commerce. I worked part-time as a freelancer for RDA - Research Data Alliance from September 2021 to September 2023, assisting them with designing and developing icons.
-                    </p>
-                    <p className='pb-10 dark:text-white'>Regarding my disability (Deaf), I have thrived in diverse workplace environments. My colleagues are aware of my disability, and I proficiently communicate in both English and Swedish to foster cooperation. While I rarely use sign language, I embrace the advancements in accessible technologies for the hard of hearing and deaf communities. Platforms like Slack and Teams facilitate seamless group communication through transcriptions.
-                    </p>
-                    <p className='pb-10 dark:text-white'>On a personal note, I hold the world deaf record in the 3000m and half marathon. I have secured victories in various deaf championships.<br /> 
-                    </p>
+        <LayoutBlock className='pt-32 px-10 pb-32'>
+            <div className='grid grid-cols-2 gap-6 max-w-screen-lg m-auto'>
+                <div className='flex flex-col md:items-start md:justify-start justify-center items-center order-1'>
+                    <h2 className=' pb-10 md:text-6xl font-semibold text-2xl lg:leading-[75px] dark:text-white'>Vem är jag?</h2>
+                    <p className=' leading-7'>Hej Jag är Otto, frilans webbutvecklare och grafiska designer. Jag blev döv efter att ha drabbats av hjärnhinneinflammation som barn, men sedan barndomen har jag framgångsrikt använt ett cochleaimplantat för talad kommunikation.
+
+Jag tillbringade 4,5 år i USA, där jag studerade vid Gallaudet University och National Technical Institute for the Deaf vid RIT University i Rochester, NY, från 2017 till 2019. Under denna tid tog jag en Associate Degree i Design and Imaging Technology med fokus på grafisk design.
+
+Trots min funktionsnedsättning (döv) har jag trivts i olika arbetsmiljöer. Mina kollegor är medvetna om min funktionsnedsättning, och jag kommunicerar flytande på både engelska och svenska för att underlätta samarbete. Även om jag sällan använder teckenspråk, uppskattar jag de framsteg som gjorts inom tillgängliga teknologier för hörselskadade och döva. Plattformar som Slack och Teams möjliggör smidig gruppkommunikation genom transkriptioner.
+
+Jag är en elitlöpare och innehar världsrekordet för döva på 3000 meter och halvmaraton. Mina hobbies inkluderar att måla Warhammer-figurer och läsa fantasyböcker.
+
+</p>
                 </div>
-                <div className='xl:col-span-4 lg:col-span-3 col-span-8 relative h-max rounded-2xl border-2 border-solid dark:border-white p-2 order-1 lg:order-2'>
-                    <Image src={profileIMG} alt='Otto profile pics' className='w-full h-auto rounded-2xl' priority sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw '/>
+                <div className=' mt-4'>
+                <Image src={OttoProfile} height={450} width={450} alt="Otto profile" />
                 </div>
             </div>
-            <h2 className='font-bold md:text-8xl text-6xl md:mt-44  w-full text-center dark:text-white'>Skills</h2>
-            <div className='flex flex-row flex-wrap justify-center gap-10 mt-20'>
+            {/* <div className='flex flex-row flex-wrap justify-center gap-10 mt-20'>
                 {technologies.map((technology) => (
                 <div className='w-32 h-32 md:mt-10' key={technology.name}>
                 <SphereCanvas icon={`/texture/${technology.name}.png`}/>
                 </div>
                 ))} 
-            </div>           
-                <Experince />
-            <Education />
+            </div>            */}
         </LayoutBlock>
     </div>
     </>

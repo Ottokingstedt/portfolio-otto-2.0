@@ -1,5 +1,4 @@
-"use client"
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { SocialIcon } from 'react-social-icons';
@@ -47,6 +46,7 @@ const CustomMobileLink: React.FC<CustomLinkProps> = ({ href, title, className, t
     router.push(href); 
   }
 
+
   return (
     <button className={`${className} relative group text-white dark:text-black`} onClick={handleClick}>
       {title}
@@ -63,55 +63,69 @@ export default function Header(){
 
 const[mode, setMode] = UseThemeProvider();
 const [isOpen, setIsOpen] = useState(false);
+const [scrolled, setScrolled] = useState(false);
 
 const handleClick = () =>{
   setIsOpen(!isOpen)
 }
 
+useEffect(() => {
+  const handleScroll = () =>{
+    setScrolled(window.scrollY > 80);
+  };
+  window.addEventListener('scroll', handleScroll);
+  return () => {
+    window.removeEventListener('scroll', handleClick);
+  };
+}, []);
+
+
  
   return (
-    <header className='px-8 py-8 flex w-full items-center justify-between z-20 lg:py-4 overflow-hidden' onClick={handleClick}>
+    <header       className={`py-8 flex w-full items-center justify-between z-50 lg:py-4 overflow-hidden fixed transition-all duration-300 ${
+      scrolled ? 'bg-white shadow-md' : 'bg-transparent'
+    }`}
 
-      <button  className='fixed z-40 flex-col jusify-center items-center lg:hidden'>
+onClick={handleClick}>
+      <div className='max-w-screen-xl w-full m-auto px-10 pt-2 flex justify-end items-end'> 
+      {/* Mobile responsive / hamburger*/}
+      <button  className='fixed z-40 flex-col justify-center items-center lg:hidden'>
         <span className={`bg-black dark:bg-white block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${isOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`}></span>
         <span className={`bg-black dark:bg-white block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm my-0.5 ${isOpen ? 'opacity-0' : 'opacity-100'}`}></span>
         <span className={`bg-black dark:bg-white block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${isOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'}`}></span>
       </button>
 
-  <motion.div 
-    initial={{
-      x: -500,
-      opacity: 0, 
-      scale: 0.5,
-    }}
-    animate={{
-      x: 0,
-      opacity: 1,
-      scale: 1,
-    }}
-    transition={{
-      duration: 1.5,
-    }}
-
-    className='items-center justify-between w-full hidden lg:flex'
+  <div className='items-center justify-between w-full hidden lg:flex'
     > 
     <nav className='flex items-center justify-center z-10'>
-    <CustomLink href='/' title="Home" className='mr-4  cursor-poitner dark:text-gray-100 hover:text-black dark:hover:text-gray-500'/>
-    <CustomLink href='/project' title="Projects" className='mr-4  cursor-poitner dark:text-gray-100 hover:text-black dark:hover:text-gray-500'/>
-    <CustomLink href='about' title="About" className='mr-4  cursor-poitner dark:text-gray-100 hover:text-black dark:hover:text-gray-500'/>
-    <Link href="/CV_otto_english.pdf" className='flex mr-4  cursor-pointer border-transparent dark:text-gray-100 hover:text-black dark:hover:text-gray-500' target={"_blank"} download={true}>Resume<div className={"w-4 ml-2"}>&#128279;</div>
-    </Link>
+    <div>
+              <Logo/>
+    </div>
+    
     </nav>
     
     <nav className="flex items-center justify-center flex-wrap">
-      <SocialIcon
+  
+
+{/* <CustomLink href='/' title="Home" className='mr-4  cursor-poitner dark:text-gray-100 hover:text-black dark:hover:text-gray-500'/>
+ */}{/*     <CustomLink href='/project' title="Projects" className='mr-4  cursor-poitner dark:text-gray-100 hover:text-black dark:hover:text-gray-500'/>
+ */}    
+ <CustomLink href='/about' title="Om mig" className='mr-4  cursor-poitner dark:text-gray-100 hover:underline dark:hover:text-gray-500'/>
+ <CustomLink href='/offret' title="Offretförfrågan" className='mr-4  cursor-poitner dark:text-gray-100 hover:underline dark:hover:text-gray-500'/>
+ <CustomLink href='/service' title="Tjänster" className='mr-4  cursor-poitner dark:text-gray-100 hover:underline dark:hover:text-gray-500'/>
+
+    {/* <Link href="/CV_otto_english.pdf" className='flex mr-4  cursor-pointer border-transparent dark:text-gray-100 hover:text-black dark:hover:text-gray-500' target={"_blank"} download={true}>Resume
+    </Link> */}
+
+    {/* <SocialIcon
       network='email'
       fgColor='currentColor'
       bgColor='transparent'
       className='dark:text-gray-100 hover:text-[#000000] cursor-pointer dark:hover:text-gray-200'
       url='mailto:otto.kingstedt@gmail.com'
-      />
-        <SocialIcon url="https://www.linkedin.com/in/otto-kingstedt"
+      /> */}
+
+  {/*       <SocialIcon url="https://www.linkedin.com/in/otto-kingstedt"
       fgColor='currentColor'
       bgColor='transparent'
       className='dark:text-gray-100 hover:text-[#000000] dark:hover:text-gray-200'
@@ -120,8 +134,8 @@ const handleClick = () =>{
             fgColor='currentColor'
             bgColor='transparent'
             className='dark:text-gray-100 hover:text-[#000000] dark:hover:text-gray-200'      
-      />
-   <button 
+      /> */}
+   {/* <button 
             onClick={() => { if(typeof setMode === "function") { setMode(mode === "light" ? "dark" : "light")}
           }}
             className={`w-8 ml-3 items-center justify-center rounded-full p-[4px] first-letter
@@ -132,9 +146,9 @@ const handleClick = () =>{
                 <SunIcon className={"fill-black"}/> :
                 <MoonIcon className={""} />
             }
-        </button>
+        </button> */}
         </nav>
-  </motion.div>
+  </div>
 
   <AnimatePresence>
   {
@@ -151,8 +165,7 @@ const handleClick = () =>{
     > 
     <nav className='flex items-center flex-col flex-warp mt-5'>
     <CustomMobileLink href='/' title="Home" className='mt-4 text-white dark:text-white' toggle={handleClick}/>
-    <CustomMobileLink href='/project' title="Projects" className='mt-4 text-white dark:text-white' toggle={handleClick}/>
-    <CustomMobileLink href='about' title="About" className='mt-4 text-white dark:text-white' toggle={handleClick}/>
+{/*     <CustomMobileLink href='/project' title="Projects" className='mt-4 text-white dark:text-white' toggle={handleClick}/>*/}    <CustomMobileLink href='about' title="About" className='mt-4 text-white dark:text-white' toggle={handleClick}/>
     <Link href="/CV_otto_english.pdf" className='flex mt-4 text-white dark:text-white' target={"_blank"} download={true}>Resume<div className={"w-4 mt-1 ml-2"}>&#128279;</div>
     </Link>
     </nav>
@@ -193,26 +206,7 @@ const handleClick = () =>{
     : null
   }
 </AnimatePresence>
-
-    <motion.div
-      initial={{
-        x: -500,
-        opacity: 0, 
-        scale: 0.5,
-      }}
-      animate={{
-        x: 0,
-        opacity: 1,
-        scale: 1,
-      }}
-      transition={{
-        duration: 1.5,
-      }}
-      className='absolute items-center left-[50%] translate-x-[-50%]'
-    >
-              <Logo/>
-    </motion.div>
-    
+      </div>
     </header>
   
   )

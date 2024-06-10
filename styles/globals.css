@@ -10,3 +10,14 @@
 backdrop-blur-md{
 backdrop-filter: blur(8px);
 }
+
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: #005b88;
+}
+
+
+.grecaptcha-badge {
+  bottom: 10% !important;
+  z-index: 100 !important;
+}

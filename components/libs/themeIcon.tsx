@@ -5,7 +5,7 @@ interface IconProps {
 }
 
 export const MoonIcon = ({className, ...props}: IconProps) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="w-full h-auto fill-dark" {...props}>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="w-full h-auto fill-[dark]" {...props}>
                                     <rect x="0" y="0" width="24" height="24" fill="rgba(255, 255, 255, 0)"></rect>
                                     <g fill="none" stroke="currentColor" strokeDasharray="2" strokeDashoffset="2" strokeLinecap="round" strokeWidth="2">
                                         <path d="M0 0">

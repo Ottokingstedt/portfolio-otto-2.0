@@ -5,6 +5,9 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { AnimatePresence } from 'framer-motion';
 import { useRouter } from "next/router"
+import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
+
+const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string;
 
 const roboto = Roboto({
   weight: '400',
@@ -12,17 +15,29 @@ const roboto = Roboto({
   variable: '--font-roboto'
 })
 
+
 export default function App({ Component, pageProps }: AppProps) {
+
     const router = useRouter();
+
   return (
-  // <ThemeProvider defaultTheme='light' attribute='class'>
-    <main className={`${roboto.variable} font-sans dark:bg-zinc-900 !h-full !overflow-hidden`}>
+    
+    <main className={`${roboto.variable}`}>
     <Header/>
-    <AnimatePresence mode='wait'>
-  <Component key={router.asPath} {...pageProps} />
-  </AnimatePresence>
-  <Footer/>
+    <GoogleReCaptchaProvider 
+        reCaptchaKey={siteKey ?? "NOT DEFINED"}
+        scriptProps={{
+          async: false,
+          defer: false,
+          appendTo: "head",
+          nonce: undefined,
+        }}
+           >
+    <AnimatePresence mode='wait' initial={false}>
+      <Component key={router.asPath} {...pageProps} />
+    </AnimatePresence>
+    </GoogleReCaptchaProvider>
+      <Footer/>
     </main>
-  //</ThemeProvider>
   );
 }

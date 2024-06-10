@@ -1,211 +1,277 @@
-import {useRef} from 'react'
-import Head from 'next/head'
+import {useRef, useEffect, useState} from 'react'
 import LayoutBlock from '@/components/LayoutBlock'
 import AnimatedText from '@/components/AnimatedText'
-import TransitionEffect from '@/components/TransitionEffect'
-import Link from 'next/link'
 import Image from 'next/image'
 import { StaticImageData } from 'next/image';
-import { SocialIcon } from 'react-social-icons';
-import { useScroll, motion } from 'framer-motion';
-import ScrollToTopButton from '@/components/ScrollToTopButton'
-import project1 from '../public/images/login_form_docker.png'
-import project2 from '../public/images/Screenshot 2023-08-31 at 11.04.35.png'
-import project3 from '../public/images/ecommerce.png'
-import project4 from '../public/images/overseainter.png'
-import project5 from '../public/images/wooecommerce.png'
-import project6 from '../public/images/mystore.png'
+import { useScroll, motion, AnimatePresence } from 'framer-motion';
+import project1 from '../public/images/code.webp'
+import { FaWordpress, FaPaintBrush, FaCode } from "react-icons/fa";
+import { GrOptimize } from "react-icons/gr";
+import Carousel from '@/components/Carousel';
+import { SlScreenDesktop } from "react-icons/sl";
+import { FaMapSigns } from "react-icons/fa";
+import { BiSupport } from "react-icons/bi";
+import Profile from '../public/images/otto_skriver_kod.webp'
+
 
 interface freatureProjectProps {
-    type: string,
-    title: string, 
-    summary: string,
-    img: StaticImageData,
-    link: string,
-    github: string,
-    programming: string,
-}
-
-interface ProjectProps {
-    type: string,
     title: string, 
     img: StaticImageData,
-    link: string,
-    github: string,
-    programming: string,
-    linkDesc: string,
-    summary:string,
-
 }
+
+
+
 
 const FramerImg = motion(Image)
 
-const FeaturedProject = ({type, title, summary, img, link, github, programming}: freatureProjectProps) => {
-    return(
-        <article className='w-full flex items-center justify-between relative
-        rounded-3xl border border-black border-solid shadow-2xl
-        md:p-12 p-4 dark:border-white lg:p-8  md:rounded-br-2xl flex-col md:flex-row'>
-          <Link href={link} target="_blank"
-          className='md:w-1/2 w-full cursor-pointer overflow-x-hidden rounded-lg overflow-hidden'>
+const FeaturedProject = ({title, img}: freatureProjectProps) => {
+    const scrollRef = useRef<HTMLDivElement | null>(null);
 
-            <FramerImg src={img} alt={title} className='w-full h-auto' 
-            whileHover={{scale:1.05}}
-            transition={{duration:0.2}}
-            priority
-            />
+    const [isVisible, setIsVisible] = useState(false);
 
-          </Link>
-            <div className='md:w-1/2 w-full flex flex-col items-start justify-between md:pl-6 pl-0 pt-0 md:pt-0 '>
-                <span className='text-orange-500 font-medium md:text-xl dark:text-orange-400'>{type}</span>
-                    <Link href={link} target='_blank' className='hover:underline underline-offset-2'>
-                    <h2 className='my-2 w-full text-left md:text-4xl text-[20px] font-bold dark:text-white'>{title}</h2>
-                    </Link>
-                    <h3 className='my-2 font-semibold md:text-base text-sm dark:text-white'>{programming}</h3>
-                    <p className='my-2 font-medium md:text-base text-sm dark:text-white'>{summary}</p>
-                    <div className='mt-2 flex items-center'>
-                        
-                        <SocialIcon href={github}  url="https://github.com/ottokingstedt"
-            fgColor='currentColor'
-            bgColor='transparent'
-            style={{width:75, height:75}}
-            className='text-gray-500 dark:hover:text-gray-200 mx-[-20px]'      
-                />
-                <Link href={link} target='_blank' className='flex  ml-4 rounded-lg bg-black text-white p-2 px-6 md:text-lg text-sm font-semibold dark:bg-slate-200 dark:text-black'>Visit Project</Link>
-                    </div>
-            </div>        
-        </article>
-    )
-}
+    useEffect(() => {
+        const handleScroll = () => {
+            if (scrollRef.current) {
+                const top = scrollRef.current.getBoundingClientRect().top;
+                const bottom = scrollRef.current.getBoundingClientRect().bottom;
+                const windowHeight = window.innerHeight;
+                if (top < windowHeight && bottom > 0) {
+                    setIsVisible(true);
+                } else {
+                    setIsVisible(false);
+                }
+            }
+        };
 
-const Project = ({type, title, img, link, programming, summary, github, linkDesc}: ProjectProps) => {
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+  
     return (
-    <article className='w-full flex flex-col  items-center justify-center
-        rounded-2xl border border-solid border-black shadow-2xl
-        md:p-6 relative p-4 dark:border-white '>
-          <Link href={link} target="_blank"
-          className='w-full cursor-pointer overflow-x-hidden rounded-lg overflow-hidden'>
-            <FramerImg src={img} alt={title} className='w-full h-auto' 
-            whileHover={{scale:1.05}}
-            transition={{duration:0.2}} 
-            priority/>
-          </Link>
-            <div className='w-full flex flex-col items-start justify-between mt-4'>
-                <span className='text-orange-500 font-medium md:text-xl'>{type}</span>
-                    <Link href={link} target='_blank' className='hover:underline underline-offset-2'>
-                    <h2 className='my-2 w-full text-left md:text-3xl text-[16px] font-bold dark:text-white'>{title}</h2>
-                    </Link>
-                    <h3 className='my-2 font-semibold dark:text-white'>{programming}</h3>
-                    <p className='my-2 font-medium md:text-base text-sm dark:text-white'>{summary}</p>
-                    <div className='mt-2 flex items-center'>
-                    <SocialIcon href={github}  url="https://github.com/ottokingstedt"
-            fgColor='currentColor'
-            bgColor='transparent'
-            style={{width:75, height:75}}
-            className='text-gray-500 dark:hover:text-gray-200 mx-[-20px]'      
-                />
-                <Link href={link} target='_blank' className='flex  ml-4 rounded-lg bg-black text-white p-2 px-6 md:text-lg text-sm font-semibold dark:bg-slate-200 dark:text-black'>Visit<span className='font-semibold'>&nbsp;{linkDesc}</span></Link>
-                    </div>
-            </div>        
-        </article>
-    )
-}
+        <div ref={scrollRef} style={{ overflow: "scroll", height: "500px" }}>
+            <AnimatePresence>
+                {isVisible && (
+                    <motion.article
+                        className='w-full flex items-center justify-between relative border border-black rounded-md shadow-2xl
+                        dark:border-white md:rounded-br-2xl flex-col md:flex-row'
+                        initial={{
+                            opacity: 0,
+                            x: 50 // Slide in from the right
+                        }}
+                        animate={{
+                            opacity: 1,
+                            x: 0 // Slide to its original position
+                        }}
+                        transition={{
+                            duration: 1 // Animation duration
+                        }}
+                    >
+                        <div className='w-full cursor-pointer overflow-x-hidden rounded-md overflow-hidden'>
+                            <FramerImg src={img} alt={title} className='w-full h-full' priority />
+                        </div>
+                    </motion.article>
+                )}
+            </AnimatePresence>
+        </div>
+    );
+};
 
-const projects = () => {
-    const ref = useRef!(null);
-    const {scrollYProgress} = useScroll!(
-        {
-            target: ref,
-            offset: ["start", "end"]
-        }
-    )
+
+const Projects = ({}) => {
+    const scrollRef = useRef<HTMLDivElement | null>(null);
+
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (scrollRef.current) {
+                const top = scrollRef.current.getBoundingClientRect().top;
+                const bottom = scrollRef.current.getBoundingClientRect().bottom;
+                const windowHeight = window.innerHeight;
+                if (top < windowHeight && bottom > 0) {
+                    setIsVisible(true);
+                } else {
+                    setIsVisible(false);
+                }
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
   return (
-    <div ref={ref} className='w-[full] mx-auto relative'>
+    <div  className='w-[full] relative'>
+    <main className='w-full mb-16 flex flex-col  max-w-screen-xl m-auto items-center justify-center'>
+        <LayoutBlock className='pt-16 px-8 grid grid-cols-2 gap-10'>
+            <div>
+            <AnimatedText className='lg:text-4xl mb-5 text-left lg:leading-[54px]' text="Sök du designer, SEO och webbutvecklare? "/>
+            <p className='text-gray-500'>
+            Min erfarenhet av att  arbetar som utvecklare, marknadsföre och grafisk design, vilket betyder att jag kan bygga skräddarsydda webbplatser utan att behöva koda dem från grunden. Istället använder jag avancerade byggverktyg för att leverera professionella och effektiva lösningar som passar dina behov.
+            </p>
+            <div className='flex mt-4 items-center'>
+            <FaCode />
+            <p className='ml-4 font-semibold'>Jag kodar om det behövs</p>
+            </div>
+            <div className='flex mt-4 items-center'>
+            <FaPaintBrush />
+            <p className='ml-4 font-semibold'>Jag design i Adobe plattform och Figma</p>
+            </div>
+            <div className='flex mt-4 items-center'>
+            <FaWordpress />
+            <p className='ml-4 font-semibold'>Jag utveckla i WordPress och Element</p>
+            </div>
+            <div className='flex mt-4 items-center'>
+            <GrOptimize />
+            <p className='ml-4 font-semibold'>SEO optimera din hemsida </p>
+            </div>
+            </div>
+           
+            <div className='flex gap-x-0' >
+            <div className="absolute inset-0 z-auto after:absolute after:right-0 after:top-0 after:w-2/4 after:h-2/4 after:bg-gradient-to-l after:from-white after:to-transparent after:filter after:blur-3 after:overflow-hidden"/>
+                <div className=' -z-10'
 
-<motion.div style={{scaleX: scrollYProgress}}
-        className='fixed left-0 top-0  w-full h-[4px] bg-orange-500 origin-left z-50' />
-    <Head>
-    <title>
-        Project | Page
-    </title>
-    <meta name='description' content='Project description'></meta>
-    </Head>  
-    <ScrollToTopButton/>
-    <TransitionEffect />
-    <main className='w-full mb-16 flex flex-col items-center justify-center'>
-        <LayoutBlock className='pt-16 px-16'>
-            <AnimatedText className='mb-16' text="Nurturing Novice Full Stack Developer: Where Imagination Fuels Code Mastery"/>
-
-            <div className='grid grid-cols-12 gap-24 gap-y-32 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 gap-x-0'>
-                <div className='col-span-12'>
+                  >
                     <FeaturedProject
-                    title="Angular Dashborad Project"
+                    title="Code"
                     img={project1}
-                    summary="This project is a web application developed for use by the Purply organization. It is built using Angular, TypeScript, Docker, Highcharts, Strapi (a headless CMS), and Keycloak for authorization. The code is designed to be modular and well-organized, with a focus on using Angular Material components wherever possible.
-                    "
-                    link="/"
-                    type="Featured Project"
-                    github=''
-                    programming='Angular, Docker, TypeScript, Strapi & SCSS'
-                    
                     />
                 </div>
 
-                <div className='md:col-span-6 col-span-12'>
-                    <Project
-                        title="Overseas Interpreting Project"
-                        img={project4}
-                        summary="This intern project is for my customer, Overseas Interpreting, an organization that offers international sign interpreting services. It involves designing website accessibility for individuals with disabilities and is being built using PHP and WordPress."
-                        link="https://github.com/Ottokingstedt/wordpress-frontend/tree/main/overseasInt"
-                        type="Featured Project"
-                        github=''
-                        linkDesc='Github'
-                        programming='PHP, Wordpress, GulpjS, JavaScript '
-                        />                
-                </div>
-
-                <div className='md:col-span-6 col-span-12'>
-                    <Project
-                    title="E-Snabbhemkop"
-                    img={project3}
-                    link="https://github.com/Ottokingstedt/E-Snabbhemkop"
-                    type="E-commerce Project"
-                    linkDesc='Github'
-                    github=''
-                    programming='React, Redux, NodeJs, ExpressJS, Bootstrap & MonogDB '
-                    summary='This school project is an e-commerce grocery, so it is designed to quickly deliver orders to customers within 24 hours. It is built using Redux, React, Node.js, Express.js, Bootstrap, and MongoDB.'
-                    />     
-                    </div>         
-                <div className='md:col-span-6 col-span-12'>
-                    <Project
-                    title="E-commerce PHP"
-                    img={project6}
-                    link="https://github.com/Ottokingstedt/Mystore/tree/main/Mystore"
-                    type="E-commerce PHP Project"
-                    github=''
-                    programming='PHP, JavaScript & MySQL'
-                    linkDesc='Github'
-                    summary=''
-                    />               
-                </div>
-                <div className='md:col-span-6 col-span-12'>
-                <Project
-                    title="DevGrocery"
-                    img={project5}
-                    link="https://github.com/Ottokingstedt/devgrocery"
-                    type="Wooecommerce Project"
-                    github=''
-                    programming='PHP, Wordpress, Wooecommerce, Bootstrap, MYSQL & JavaScript'
-                    linkDesc='Github'
-                    summary=''
-
-                    />                 
-                </div> 
             </div>
         </LayoutBlock>
 
     </main>
+    <div className=' pt-36 w-[full] mx-auto relative '>
+            <h2 className=' font-bold text-4xl text-center mb-10 pb-10'>
+            Hur kan en webbsida se ut?
+            </h2>
+    <div className='w-full h-[600px] overflow-hidden z-40 relative '>
+            <div>
+               <Carousel />
+            </div>
+    </div>
+    <div className=' mx-auto max-w-screen-xl px-8 overflow-hidden pt-32 items-center pb-10 z-50'>
+        <h2 className='font-bold text-4xl text-center mb-10'>
+        Såhär hjälper jag dig
+        </h2>
+        <p className='text-center text-gray-500'>
+        Jag använder ett strukturerat arbetssätt för att säkerställa en professionell leverans av din nya webbplats. För dig med en begränsad budget är designmallar ett optimalt val, medan du som behöver avancerade funktioner och en mer skräddarsydd lösning kan dra nytta av strategisk webbdesign.        </p>
+        <section className=' grid grid-cols-3  gap-20 pt-20 z-30'>
+
+<div ref={scrollRef} style={{ overflow: "scroll", height: "400px" }} >
+        <AnimatePresence>
+        {isVisible && (
+                <motion.div className='block'
+                initial={{
+                    opacity: 0,
+                    y: 50 // Slide in from the right
+                }}
+                animate={{
+                    opacity: 1,
+                    y: 0 // Slide to its original position
+                }}
+                transition={{
+                    duration: 1, // Animation duration
+                    delay: 0
+
+                }}
+                >
+                <SlScreenDesktop className='h-10 w-10 mt-10'  />
+                    <h3 className=' text-lg font-bold mt-2'>
+                    Designmallar            
+                    </h3>
+                    <p className='text-gray-500'>
+                    Färdiga designmallar som du enkelt fyller på med eget innehåll. Praktiska och stilrena och lätta att anpassa efter dina behov.
+                    </p>
+                    <button className='bg-black cursor-pointer hover:bg-gray-600 text-white font-bold py-2 px-4 rounded text-[16px] mt-8'>Läs mer om Designmallar</button>
+                </motion.div>
+                 )}
+        </AnimatePresence>
+       
+    </div>
+    <div ref={scrollRef}>
+        <AnimatePresence>
+        {isVisible && (
+                <motion.div className='block'
+                initial={{
+                    opacity: 0,
+                    y: 50 // Slide in from the right
+                }}
+                animate={{
+                    opacity: 1,
+                    y: 0 // Slide to its original position
+                }}
+                transition={{
+                    duration: 1,
+                    delay: 0.5
+                }}
+                >
+                <FaMapSigns className='h-10 w-10 mt-10'  />
+                    <h3 className=' text-lg font-bold mt-2'>
+                    Strategiskt            
+                    </h3>
+                    <p className='text-gray-500'>
+                    Du får en strategiskt planerad webbsida med en helt egen design och jag hjälper dig från idé till lansering.</p>
+                    <button className='bg-black hover:bg-gray-600 text-white font-bold py-2 px-4 rounded text-[16px] mt-8'>Läs mer om Strategiskt</button>
+                </motion.div>
+        )}
+        </AnimatePresence>
+    </div>
+
+    <div ref={scrollRef}>
+        <AnimatePresence>
+        {isVisible && (                   
+                        <motion.div className='block'
+                        initial={{
+                            opacity: 0,
+                            y: 50 // Slide in from the right
+                        }}
+                        animate={{
+                            opacity: 1,
+                            y: 0 // Slide to its original position
+                        }}
+                        transition={{
+                            duration: 1,
+                            delay: 1.0
+                        }}
+                >
+                <BiSupport className='h-10 w-10 mt-10'  />
+                    <h3 className=' text-lg font-bold mt-2'>
+                    Support            
+                    </h3>
+                    <p className='text-gray-500'>
+                    Fokusera på det du gör bäst och låt mig rå om din webbsida genom att regelbundet se över, uppdatera och administrera den.</p>
+                    <button className='bg-black hover:bg-gray-600 text-white font-bold py-2 px-4 rounded text-[16px] mt-8'>Läs mer om Support</button>
+                </motion.div>
+                     )}
+        </AnimatePresence>
+        </div>
+
+        </section>
+    </div>
+    </div>
+    <section className=' mx-auto max-w-screen-xl z-100'>
+        <div className='grid grid-cols-rep gap-0 '>
+        <div>
+            <Image src={Profile} alt="Otto is coding" height={600} width={600} className='p-10' />
+        </div>
+        <div className='px-8 text-left flex flex-col items-center justify-center h-full'>
+            <h2 className='font-bold text-2xl text-center mb-5  '>Offertförfrågan och Målgruppsinformation</h2>
+            <p className='text-gray-500'>
+            Jag arbetar med webbprojekt och söker offerter för tjänstepaket som omfattar design, utveckling och underhåll av webbplatser. Projektet riktar sig till en bred publik, inklusive både privatpersoner och företag, med målet att skapa en användarvänlig och engagerande webbplats.
+            </p>
+            <button className='bg-black hover:bg-gray-600 text-white font-bold py-2 px-4 rounded text-[16px] mt-8'>Se Offertförfrågan</button>
+        </div>
+        </div>
+    </section>
     </div>
     )
 }
 
-export default projects
+export default Projects

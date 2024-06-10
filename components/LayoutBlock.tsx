@@ -1,6 +1,7 @@
 import React from "react"
 import Head from "next/head"
 import { useRouter } from "next/router"
+import ScrollToTopButton from "./ScrollToTopButton"
 interface LayoutBlockProps {
   className?: string;
   children: React.ReactNode
@@ -42,6 +43,7 @@ export default function LayoutBlock({ children, className, ...customMeta  }: Lay
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
       </Head>
+      <ScrollToTopButton />
       <main className={`w-full z-0 dark:bg-zinc-900 p-0 ${className}`}>
           {children}
       </main>
