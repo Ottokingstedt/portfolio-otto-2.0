@@ -123,15 +123,15 @@ const Projects = ({}) => {
             </div>
             <div className='flex mt-4 items-center'>
             <FaPaintBrush />
-            <p className='ml-4 font-semibold'>Jag design i Adobe plattform och Figma</p>
+            <p className='ml-4 font-semibold'>Jag designar i Adobe-plattformen och Figma</p>
             </div>
             <div className='flex mt-4 items-center'>
             <FaWordpress />
-            <p className='ml-4 font-semibold'>Jag utveckla i WordPress och Element</p>
+            <p className='ml-4 font-semibold'>Jag utvecklar i WordPress och Element</p>
             </div>
             <div className='flex mt-4 items-center'>
             <GrOptimize />
-            <p className='ml-4 font-semibold'>SEO optimera din hemsida </p>
+            <p className='ml-4 font-semibold'>SEO optimerar din hemsida </p>
             </div>
             </div>
            
