@@ -6,7 +6,7 @@ import Contact from '@/components/Contact'
 import Experince from '@/components/Experince'
 import Projects from './project'
 import ModelViewerComponent from '@/components/ModelViewComponent'
-
+import Link from 'next/link'
  const Home: NextPage = () => {
 
   return (
@@ -24,8 +24,8 @@ import ModelViewerComponent from '@/components/ModelViewComponent'
        <div className='mt-10'>
         <p className='font-normal lg:text-xl md:text-base leading-10 text-gray-500'>Jag hjälper dig som företagare med din nya hemsida på ett strategiskt sätt – från idé och planering till lansering av en professionell och användarvänlig webbplats som stöder dina övergripande affärsmål.
 </p>
-<button className='bg-black hover:bg-gray-600 text-white font-bold py-2 px-4 rounded text-[20px] mt-10' id=''><a href="#Såhär-hjälper-jag-dig">Kom igång
-  </a></button>
+<button className='bg-black hover:bg-gray-600 text-white font-bold py-2 px-4 rounded text-[20px] mt-10' id=''><Link href="#Såhär-hjälper-jag-dig">Kom igång
+  </Link></button>
        </div>
     </div>
   </div>

@@ -85,36 +85,17 @@ export default function Header() {
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              initial={{ width: "0vw", x: "-200%", y: "-50%" }}
-              animate={{ width: "50vw", x: "-80%" }}
-              exit={{ width: '0vw', x: "-200%" }}
+              initial={{ width: "0vw", y: "-150%", x: "-50%" }}
+              animate={{ width: "100rem", y: "-80%" }}
+              exit={{ width: '0vw', y: "-200%" }}
               transition={{ duration: 0.5, originX: 1, ease: [easeOut, easeIn] }}
-              className='min-w-[70vw] h-full flex flex-col items-center justify-center fixed z-30 top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-zinc-950 lg:hidden'
+              className=' h-full flex items-center justify-center fixed z-30 top-[50%] left-[20%] -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-zinc-950 lg:hidden'
             >
-              <nav className='text-black flex items-center flex-col flex-wrap'>
+              <nav className=' text-black flex items-start flex-col text-xl font-semibold'>
                 <CustomMobileLink href='/' title="Home" className='mt-4 text-black' toggle={handleClick} />
                 <CustomMobileLink href='/about' title="Om mig" className='mt-4 cursor-pointer dark:text-gray-100 hover:underline dark:hover:text-gray-500' toggle={handleClick} />
                 <CustomMobileLink href='/offret' title="Offretförfrågan" className='mt-4 cursor-pointer dark:text-gray-100 hover:underline dark:hover:text-gray-500' toggle={handleClick} />
                 <CustomMobileLink href='/service' title="Tjänster" className='mt-4 cursor-pointer dark:text-gray-100 hover:underline dark:hover:text-gray-500' toggle={handleClick} />
-              </nav>
-
-              <nav className="flex items-center mt-10">
-                <SocialIcon
-                  network='email'
-                  fgColor='currentColor'
-                  bgColor='transparent'
-                  className='text-white'
-                />
-                <SocialIcon url="https://www.linkedin.com/in/otto-kingstedt"
-                  fgColor='currentColor'
-                  bgColor='transparent'
-                  className='text-white'
-                />
-                <SocialIcon url="https://github.com/ottokingstedt"
-                  fgColor='currentColor'
-                  bgColor='transparent'
-                  className='text-white'
-                />
               </nav>
             </motion.div>
           )}
