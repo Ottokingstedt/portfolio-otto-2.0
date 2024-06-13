@@ -150,7 +150,7 @@ const Projects = ({}) => {
         </LayoutBlock>
 
     </main>
-    <div className=' pt-36 lg:pb-36 pb-5 w-[full] mx-auto relative '>
+    <div className='pt-5 lg:pt-36 lg:pb-36 pb-5 w-[full] mx-auto relative '>
             <h2 className=' font-bold text-2xl lg:text-4xl text-center mb-10 pb-10'>
             Hur kan en webbsida se ut?
             </h2>
@@ -272,7 +272,7 @@ const Projects = ({}) => {
         </div>
         <div className='px-8 text-left flex flex-col items-center justify-center h-full'>
             <h2 className='font-bold text-2xl text-center mb-5  '>Offertförfrågan och Målgruppsinformation</h2>
-            <p className='text-gray-500'>
+            <p className='text-gray-500 text-center'>
             Jag arbetar med webbprojekt och söker offerter för tjänstepaket som omfattar design, utveckling och underhåll av webbplatser. Projektet riktar sig till en bred publik, inklusive både privatpersoner och företag, med målet att skapa en användarvänlig och engagerande webbplats.
             </p>
             <button className='bg-black hover:bg-gray-600 text-white font-bold py-2 px-4 rounded text-[16px] mt-8'>Se Offertförfrågan</button>
