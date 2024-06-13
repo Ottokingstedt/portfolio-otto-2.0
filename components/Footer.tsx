@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import Link from 'next/link'
 import Logo from './Logo'
@@ -29,10 +30,10 @@ const Footer = () => {
                   <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Följa och connecta</h2>
                   <ul className="text-gray-500 dark:text-gray-400 font-medium">
                       <li className="mb-4">
-                          <a href="https://github.com/themesberg/flowbite" className="hover:underline ">Github</a>
+                          <Link href="https://github.com/Ottokingstedt" className="hover:underline ">Github</Link>
                       </li>
                       <li>
-                          <a href="https://discord.gg/4eeurUVvTy" className="hover:underline">Linkedin</a>
+                          <Link href="https://www.linkedin.com/in/otto-kingstedt/" className="hover:underline">Linkedin</Link>
                       </li>
                   </ul>
               </div>
