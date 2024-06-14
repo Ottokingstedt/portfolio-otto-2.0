@@ -271,7 +271,7 @@ const Projects = ({}) => {
             <Image src={Profile} alt="Otto is coding" height={600} width={600} className='p-10' />
         </div>
         <div className='px-8 text-left flex flex-col items-center justify-center h-full'>
-            <h2 className='font-bold text-2xl text-center mb-5  '>Offertförfrågan och Målgruppsinformation</h2>
+            <h2 className='font-bold text-2xl text-center mb-5  '>Offretförfrågan och Målgruppsinformation</h2>
             <p className='text-gray-500 text-center'>
             Jag arbetar med webbprojekt och söker offerter för tjänstepaket som omfattar design, utveckling och underhåll av webbplatser. Projektet riktar sig till en bred publik, inklusive både privatpersoner och företag, med målet att skapa en användarvänlig och engagerande webbplats.
             </p>

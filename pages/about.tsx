@@ -29,13 +29,22 @@ const about = () => {
             <div className='md:block lg:grid grid-cols-2 gap-6 max-w-screen-lg m-auto'>
                 <div className=' flex flex-col md:items-start md:justify-start justify-center items-center order-1'>
                     <h2 className=' pb-10 md:text-6xl font-semibold text-2xl lg:leading-[75px] dark:text-white'>Vem är jag?</h2>
-                    <p className=' leading-7'>Hej Jag är Otto, frilans webbutvecklare och grafiska designer. Jag blev döv efter att ha drabbats av hjärnhinneinflammation som barn, men sedan barndomen har jag framgångsrikt använt ett cochleaimplantat för talad kommunikation.
-
-Jag tillbringade 4,5 år i USA, där jag studerade vid Gallaudet University och National Technical Institute for the Deaf vid RIT University i Rochester, NY, från 2017 till 2019. Under denna tid tog jag en Associate Degree i Design and Imaging Technology med fokus på grafisk design.
-
-Trots min funktionsnedsättning (döv) har jag trivts i olika arbetsmiljöer. Mina kollegor är medvetna om min funktionsnedsättning, och jag kommunicerar flytande på både engelska och svenska för att underlätta samarbete. Även om jag sällan använder teckenspråk, uppskattar jag de framsteg som gjorts inom tillgängliga teknologier för hörselskadade och döva. Plattformar som Slack och Teams möjliggör smidig gruppkommunikation genom transkriptioner.
-
-Jag är en elitlöpare och innehar världsrekordet för döva på 3000 meter och halvmaraton. Mina hobbies inkluderar att måla Warhammer-figurer och läsa fantasyböcker.
+                    <p className=' leading-7'>Hej Jag är Otto, frilans webbutvecklare och grafiska designer. Jag blev döv
+efter att ha drabbats av hjärnhinneinflammation som barn, men sedan
+barndomen har jag framgångsrikt använt ett cochleaimplantat för talad
+kommunikation. Jag tillbringade 4,5 år i USA, där jag studerade vid Gallaudet
+University och National Technical Institute for the Deaf vid RIT University i
+Rochester, NY, från 2017 till 2019. Under denna tid tog jag en Associate
+Degree i Design and Imaging Technology med fokus på grafisk design. Trots
+min funktionsnedsättning (döv) trivs jag i alla typer av arbetsmiljöer. Mina
+kollegor är medvetna om min funktionsnedsättning, och jag kommunicerar
+flytande på både engelska och svenska för att underlätta samarbetet. Även
+om jag sällan använder teckenspråk, uppskattar jag de framsteg som gjorts
+inom tillgängliga teknologier för hörselskadade och döva. Plattformar som
+Slack och Teams möjliggör smidig gruppkommunikation genom
+transkriptioner. Jag är en elitlöpare och innehar världsrekordet för döva på
+3000 meter och halvmaraton. Mina hobbies inkluderar att måla Warhammer-
+figurer och läsa fantasyböcker.
 
 </p>
                 </div>
