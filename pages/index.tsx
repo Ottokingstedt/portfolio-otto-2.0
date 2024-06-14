@@ -20,7 +20,7 @@ import Link from 'next/link'
 <LayoutBlock className=' lg:pb-20 pt-20 lg:mt-0  max-w-[1280px] m-auto lg:grid grid-cols-2 md:block'>
   <div className= 'm-auto md:w-full flex lg:flex-col'>
   <div className='md:text-3xl dark:text-white px-8 w-full'>
-       <h1 className='md:text-6xl font-semibold text-2xl lg:leading-[75px]'>Så hjälper vi dig att utveckla din nya webbplats.</h1>
+       <h1 className='md:text-6xl font-semibold text-2xl lg:leading-[75px]'>Så hjälper jag dig att utveckla din nya webbplats.</h1>
        <div className='mt-10'>
         <p className='font-normal lg:text-xl md:text-base leading-10 text-gray-500'>Jag hjälper dig som företagare med din nya hemsida på ett strategiskt sätt – från idé och planering till lansering av en professionell och användarvänlig webbplats som stöder dina övergripande affärsmål.
 </p>
