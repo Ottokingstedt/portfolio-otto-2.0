@@ -85,11 +85,11 @@ export default function Header() {
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              initial={{ width: "0vw", y: "-150%", x: "-50%" }}
+              initial={{ width: "0", y: "-150%", x: "-50%" }}
               animate={{ width: "100rem", y: "-80%" }}
               exit={{ width: '0vw', y: "-200%" }}
               transition={{ duration: 0.5, originX: 1, ease: [easeOut, easeIn] }}
-              className=' h-full flex items-center justify-center fixed z-30 top-[50%] left-[20%] -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-zinc-950 lg:hidden'
+              className=' pl-20 h-full flex items-center justify-center fixed z-30 top-[50%] left-[20%] -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-zinc-950 lg:hidden'
             >
               <nav className=' text-black flex items-start flex-col text-xl font-semibold'>
                 <CustomMobileLink href='/' title="Home" className='mt-4 text-black' toggle={handleClick} />

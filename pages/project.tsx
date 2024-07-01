@@ -136,7 +136,7 @@ const Projects = ({}) => {
             </div>
            
             <div className='flex gap-x-0' >
-            <div className="hidden lg:block absolute inset-0 z-auto after:absolute after:right-0 after:top-0 after:w-2/4 after:h-2/4 after:bg-gradient-to-l after:from-white  after:filter after:blur-3 after:overflow-hidden"/>
+            <div className="hidden lg:block inset-0 z-auto after:absolute after:right-0 after:top-0 after:w-2/4 after:h-2/4 after:bg-gradient-to-l after:from-white  after:filter after:blur-3 after:overflow-hidden"/>
                 <div className=' -z-10 mt-12 lg:mt-0'
 
                   >
@@ -265,17 +265,17 @@ const Projects = ({}) => {
         </section>
     </div>
     </div>
-    <section className=' mx-auto max-w-screen-xl z-100'>
+    <section className=' mx-auto max-w-screen-xl z-50'>
         <div className='block lg:grid grid-cols-rep gap-0 '>
         <div>
             <Image src={Profile} alt="Otto is coding" height={600} width={600} className='p-10' />
         </div>
         <div className='px-8 text-left flex flex-col items-center justify-center h-full'>
-            <h2 className='font-bold text-2xl text-center mb-5  '>Offretförfrågan och Målgruppsinformation</h2>
+            <h2 className='font-bold text-2xl text-center mb-5 z-50  '>Offretförfrågan och Målgruppsinformation</h2>
             <p className='text-gray-500 text-center'>
             Jag arbetar med webbprojekt och söker offerter för tjänstepaket som omfattar design, utveckling och underhåll av webbplatser. Projektet riktar sig till en bred publik, inklusive både privatpersoner och företag, med målet att skapa en användarvänlig och engagerande webbplats.
             </p>
-            <button className='bg-black hover:bg-gray-600 text-white font-bold py-2 px-4 rounded text-[16px] mt-8'>Se Offertförfrågan</button>
+            <button className='bg-black hover:bg-gray-600 text-white font-bold py-2 px-4 rounded text-[16px] mt-8'><Link href="/offret">Se Offertförfrågan</Link></button>
         </div>
         </div>
     </section>

@@ -22,7 +22,7 @@ const Footer = () => {
                           <Link href="/about" className="hover:underline">Om mig</Link>
                       </li>
                       <li>
-                          <Link href="https://tailwindcss.com/" className="hover:underline">Tjänser</Link>
+                          <Link href="/service" className="hover:underline">Tjänser</Link>
                       </li>
                   </ul>
               </div>
