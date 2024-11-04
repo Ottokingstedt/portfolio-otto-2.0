@@ -1,13 +1,13 @@
 'use client'
 import React from 'react'
 import Link from 'next/link'
-import Logo from './Logo'
+// import Logo from './Logo'
 // import HireMe from '@/components/HireMe'
 
 const Footer = () => {
   return (
     <footer>
-    <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-screen-xl px-4 pb-7 sm:px-6 lg:px-8">
       <div className="sm:flex sm:items-center sm:justify-between">
         {/* <div className="flex mx-2 justify-center sm:justify-start">
         <Logo />
