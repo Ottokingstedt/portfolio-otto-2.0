@@ -77,8 +77,8 @@ export default function Header() {
 
           <nav className="flex items-center justify-center flex-wrap">
             <CustomLink href='/about' title="Om mig" className='mr-4 cursor-pointer dark:text-gray-100 hover:underline dark:hover:text-gray-500' />
-            <CustomLink href='/offret' title="Offretförfrågan" className='mr-4 cursor-pointer dark:text-gray-100 hover:underline dark:hover:text-gray-500' />
-            <CustomLink href='/service' title="Tjänster" className='mr-4 cursor-pointer dark:text-gray-100 hover:underline dark:hover:text-gray-500' />
+            {/* <CustomLink href='/offret' title="Offretförfrågan" className='mr-4 cursor-pointer dark:text-gray-100 hover:underline dark:hover:text-gray-500' />
+            <CustomLink href='/service' title="Tjänster" className='mr-4 cursor-pointer dark:text-gray-100 hover:underline dark:hover:text-gray-500' /> */}
           </nav>
         </div>
 
@@ -94,8 +94,8 @@ export default function Header() {
               <nav className=' text-black flex items-start flex-col text-xl font-semibold'>
                 <CustomMobileLink href='/' title="Home" className='mt-4 text-black' toggle={handleClick} />
                 <CustomMobileLink href='/about' title="Om mig" className='mt-4 cursor-pointer dark:text-gray-100 hover:underline dark:hover:text-gray-500' toggle={handleClick} />
-                <CustomMobileLink href='/offret' title="Offretförfrågan" className='mt-4 cursor-pointer dark:text-gray-100 hover:underline dark:hover:text-gray-500' toggle={handleClick} />
-                <CustomMobileLink href='/service' title="Tjänster" className='mt-4 cursor-pointer dark:text-gray-100 hover:underline dark:hover:text-gray-500' toggle={handleClick} />
+                {/* <CustomMobileLink href='/offret' title="Offretförfrågan" className='mt-4 cursor-pointer dark:text-gray-100 hover:underline dark:hover:text-gray-500' toggle={handleClick} />
+                <CustomMobileLink href='/service' title="Tjänster" className='mt-4 cursor-pointer dark:text-gray-100 hover:underline dark:hover:text-gray-500' toggle={handleClick} /> */}
               </nav>
             </motion.div>
           )}
