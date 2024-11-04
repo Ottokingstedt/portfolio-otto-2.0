@@ -37,7 +37,7 @@ export default function App({ Component, pageProps }: AppProps) {
           }}
         >
       {showConstruction && (
-        <div className="fixed inset-0 bg-gray-800 bg-opacity-100 flex flex-col items-center justify-center z-50 text-white">
+        <div className=" fixed inset-0 overflow-scroll bg-gray-800 bg-opacity-100 flex flex-col items-center justify-center z-50 text-white">
           <Contact/>
           {/* <button 
             onClick={() => setShowConstruction(false)} 
