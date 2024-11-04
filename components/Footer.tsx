@@ -15,7 +15,7 @@ const Footer = () => {
         </div> */}
   
         <p className="mt-4 text-center text-sm text-gray-500 lg:mt-0 lg:text-right">
-        <span>{new Date().getFullYear()} &copy; All Rights Reserved | Otto Kingstedt's Portfolio Web</span>
+        <span>{new Date().getFullYear()} &copy; All Rights Reserved | Otto Kingstedt&apos;s Portfolio Web</span>
         </p>
     
       </div>
