@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 import NoSsr from '@/components/no-ssr';
 import { useState } from 'react';
+import Contact from '@/components/Contact';
 
 const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string;
 
@@ -26,21 +27,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <main className={`${roboto.variable}`}>
-      {showConstruction && (
-        <div className="fixed inset-0 bg-gray-800 bg-opacity-100 flex flex-col items-center justify-center z-50 text-white">
-          <h1 className="text-4xl font-bold mb-4">Under Construction</h1>
-          <p className="text-lg mb-6">Our website is currently being improved. Please check back soon!</p>
-          {/* <button 
-            onClick={() => setShowConstruction(false)} 
-            className="px-4 py-2 bg-blue-500 hover:bg-blue-600 rounded"
-          >
-            Dismiss
-          </button> */}
-        </div>
-      )}
-      <NoSsr>
-        {/* <Header /> */}
-        <GoogleReCaptchaProvider
+         <GoogleReCaptchaProvider
           reCaptchaKey={siteKey ?? "NOT DEFINED"}
           scriptProps={{
             async: false,
@@ -49,12 +36,26 @@ export default function App({ Component, pageProps }: AppProps) {
             nonce: undefined,
           }}
         >
-          {/* <AnimatePresence mode='wait' initial={false}>
+      {showConstruction && (
+        <div className="fixed inset-0 bg-gray-800 bg-opacity-100 flex flex-col items-center justify-center z-50 text-white">
+          <Contact/>
+          {/* <button 
+            onClick={() => setShowConstruction(false)} 
+            className="px-4 py-2 bg-blue-500 hover:bg-blue-600 rounded"
+          >
+            Dismiss
+          </button> */}
+        </div>
+      )}
+              </GoogleReCaptchaProvider>
+
+        {/* <Header /> */}
+     
+    
+              {/* <AnimatePresence mode='wait' initial={false}>
             <Component key={router.asPath} {...pageProps} />
           </AnimatePresence> */}
-        </GoogleReCaptchaProvider>
-        <Footer />
-      </NoSsr>
+        {/* <Footer /> */}
     </main>
   );
 }
